@@ -13,6 +13,8 @@
 ## Assignment 1 : Proposal
 Due: Sun Dec 3, 2023 11:59pm
 
+- [ ] Completed
+
 * Identify problem (via ideation technique(s) and data gathering/collection/discovery/elicitation technique, e.g.interview).
 * Propose solution(s). Your team can use any ideation techniques such as brainstorming, sketching, mind mapping, etc, to communicate  the solutions. Determine the potential solution from alternatives proposed. 
 * Write. Present the result of the investigation in the report. See the format below.
@@ -26,6 +28,8 @@ Due: Sun Dec 3, 2023 11:59pm
 
 ## Assignment 2: SRS (Software Requirements Specification)
 Due: Sun Dec 17, 2023 11:59pm
+
+- [ ] Completed
 
 > [!TIP]
 > example of SRS
