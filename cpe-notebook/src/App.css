@@ -11,6 +11,6 @@
 .app-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 30px;
-  row-gap: 16px;
+  column-gap: 40px;
+  row-gap: 30px;
 }
