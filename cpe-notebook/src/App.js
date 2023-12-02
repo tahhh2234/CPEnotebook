@@ -20,7 +20,9 @@ function App() {
 
   const notebookElements = notebooks
     .filter((notebook) => {
-      return notebook.title.includes(searchText);
+      const lowercaseSearchText = searchText.toLowerCase();
+      const lowercaseTitle = notebook.title.toLowerCase();
+      return lowercaseTitle.includes(lowercaseSearchText);
     })
     .map((notebook, index) => {
       return (
