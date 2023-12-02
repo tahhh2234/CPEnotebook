@@ -1,8 +1,6 @@
 .app-header {
-  border: 0px solid gray;
-  border-radius: 15px;
-  height: 120px;
-  width: 450px;
+  height: auto;
+  width: auto;
   display: flex; /*center*/
   justify-content: center; /*horizon*/
   align-items: center; /*vertical*/
@@ -14,7 +12,7 @@
 }
 
 .app-header-logo {
-  height: 105px;
+  height: 100px;
   padding: auto;
   margin-top: 25px;
   margin-left: auto;

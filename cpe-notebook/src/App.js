@@ -5,6 +5,7 @@ import NotebookItem from "./components/NotebookItem";
 import NotebookPost from "./components/NotebookPost";
 import notebooks from "./data/notebooks";
 import AppSearch from "./components/AppSearch";
+import CommentSection from "./components/CommentSection";
 
 function App() {
   const [selectedNotebook, setSelectedNotebook] = useState(null);
@@ -54,6 +55,7 @@ function App() {
         </div>
       </section>
       {notebookPost}
+      <CommentSection />
     </div>
   );
 }
