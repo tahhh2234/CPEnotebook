@@ -1,0 +1,11 @@
+.app-header {
+  border-bottom: 2px solid gray;
+  height: 100px;
+  display: flex; /*center*/
+  justify-content: center; /*horizon*/
+  align-items: center; /*vertical*/
+}
+
+.app-header-logo {
+  height: 80px;
+}

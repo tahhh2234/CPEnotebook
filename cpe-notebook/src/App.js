@@ -1,29 +1,46 @@
+import { useState } from "react";
 import "./App.css";
+import AppHeader from "./components/AppHeader";
+import NotebookItem from "./components/NotebookItem";
+import NotebookPost from "./components/NotebookPost";
+import notebooks from "./data/notebooks";
 
 function App() {
+  const [selectedNotebook, setSelectedNotebook] = useState(null);
+
+  function onNotebookOpenClick(theNotebook) {
+    setSelectedNotebook(theNotebook);
+  }
+
+  function onNotebookCloseClick() {
+    setSelectedNotebook(null);
+  }
+
+  const notebookElements = notebooks.map((notebook, index) => {
+    return (
+      <NotebookItem
+        key={index}
+        notebook={notebook}
+        onNotebookClick={onNotebookOpenClick}
+      />
+    );
+  });
+
+  let notebookPost = null;
+  if (!!selectedNotebook) {
+    notebookPost = (
+      <NotebookPost
+        notebook={selectedNotebook}
+        onBgClick={onNotebookCloseClick}
+      />
+    );
+  }
+
   return (
     <div>
-      <header className="app-header">
-        <img className="app-header-logo" src="/images/logo.png" />
-      </header>
-      <div className="app-grid">
-        <div className="notebook-item">
-          <img src="/images/algorithms.png" />
-          <h4>Algorithms for Computer Engineers</h4>
-        </div>
-        <div className="notebook-item">
-          <img src="/images/datacomp.png" />
-          <h4>Data and Computer Communications</h4>
-        </div>
-        <div className="notebook-item">
-          <img src="/images/numerical.png" />
-          <h4>Numerical Computation for Engineers</h4>
-        </div>
-        <div className="notebook-item">
-          <img src="/images/oop.png" />
-          <h4>Object-Oriented Programming (OOP)</h4>
-        </div>
-      </div>
+      <AppHeader />
+      <div className="app-grid">{notebookElements}</div>
+      {notebookPost}
     </div>
   );
 }
