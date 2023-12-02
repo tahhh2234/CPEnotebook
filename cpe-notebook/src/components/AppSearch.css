@@ -1,5 +1,5 @@
 .app-search {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .app-search-input {
@@ -8,4 +8,5 @@
   font-size: 16px;
   box-sizing: border-box;
   border: 1px solid gray;
+  border-radius: 15px;
 }

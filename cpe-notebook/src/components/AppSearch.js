@@ -7,7 +7,7 @@ function AppSearch(props) {
       <input
         className="app-search-input"
         type="text"
-        placeholder="search..."
+        placeholder="Search..."
         value={value}
         onChange={(event) => {
           onValueChange(event.target.value);
