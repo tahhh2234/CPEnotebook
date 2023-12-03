@@ -1,3 +1,6 @@
+>You can access our website via this url: https://cpenotebook.netlify.app/
+
+
 # Software Engineering Project
 
 * Prepare to create your project website where all project and team information are stored. In the next activity, you will be asked to show the website containing project and scope.
