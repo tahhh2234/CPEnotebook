@@ -65,6 +65,13 @@ function CommentSection() {
     localStorage.setItem("comments", JSON.stringify(updatedComments));
   };
 
+  const handleDeleteReply = (commentIndex, replyIndex) => {
+    const updatedComments = [...comments];
+    updatedComments[commentIndex].replies.splice(replyIndex, 1);
+    setComments(updatedComments);
+    localStorage.setItem("comments", JSON.stringify(updatedComments));
+  };
+
   return (
     <div className="comment-section">
       <h1>Disccussions</h1>
@@ -77,6 +84,7 @@ function CommentSection() {
         handleReplyChange={handleReplyChange}
         handleKeyPress={handleKeyPress}
         handleAddReply={handleAddReply}
+        handleDeleteReply={handleDeleteReply}
       />
       <CommentBar
         newComment={newComment}

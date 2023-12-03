@@ -1,5 +1,8 @@
+// CommentDisplay.js
+
 import React from "react";
 import "./CommentDisplay.css";
+import Replies from "./Replies";
 
 const CommentDisplay = ({
   comments,
@@ -10,6 +13,7 @@ const CommentDisplay = ({
   handleReplyChange,
   handleKeyPress,
   handleAddReply,
+  handleDeleteReply, // Pass the function to handle reply deletion
 }) => {
   return (
     <div className="comment-display">
@@ -19,25 +23,16 @@ const CommentDisplay = ({
             {comment.text}
             <button onClick={() => handleReply(index)}>Reply</button>
             <button onClick={() => handleDeleteComment(index)}>❌</button>
-            {replyIndex === index && (
-              <div>
-                <input
-                  type="text"
-                  value={replyText}
-                  onChange={handleReplyChange}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Type your reply here and press Enter to post"
-                />
-                <button onClick={handleAddReply}>Post Reply</button>
-              </div>
-            )}
-            {comment.replies && comment.replies.length > 0 && (
-              <ul>
-                {comment.replies.map((reply, replyIndex) => (
-                  <li key={replyIndex}>{reply}</li>
-                ))}
-              </ul>
-            )}
+            <Replies
+              replyIndex={replyIndex}
+              index={index}
+              replyText={replyText}
+              handleReplyChange={handleReplyChange}
+              handleKeyPress={handleKeyPress}
+              handleAddReply={handleAddReply}
+              handleDeleteReply={handleDeleteReply} // Pass the function to handle reply deletion
+              commentReplies={comment.replies}
+            />
           </li>
         ))}
       </ul>

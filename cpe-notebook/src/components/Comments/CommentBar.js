@@ -14,7 +14,7 @@ const CommentBar = ({
         value={newComment}
         onChange={handleInputChange}
         onKeyPress={handleKeyPress}
-        placeholder="Type yoor comment here..."
+        placeholder="Type your comment here..."
       />
       <button onClick={handleAddComment}>Post Comment</button>
     </div>

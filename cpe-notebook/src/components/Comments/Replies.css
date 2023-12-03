@@ -1,0 +1,59 @@
+/* Replies.css */
+
+.replies {
+  margin-top: 15px;
+}
+
+.reply {
+  border-radius: 8px;
+  background-color: #f3f3f3;
+}
+
+.reply-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reply-content p {
+  margin: 0;
+}
+
+.reply-form {
+  margin-top: 5px;
+}
+
+.reply-form input[type="text"] {
+  width: 70%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.reply-form button {
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reply-form button:hover {
+  background-color: #45a049;
+}
+
+.reply button {
+  padding: 6px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reply button:hover {
+  background-color: #d32f2f;
+}

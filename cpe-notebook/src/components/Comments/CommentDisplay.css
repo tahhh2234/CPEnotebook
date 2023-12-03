@@ -1,17 +1,17 @@
 /* CommentDisplay.css */
 
 .comment-display {
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
+  margin: auto;
 }
 
 .comment-display ul {
   list-style: none;
-  padding: 0;
+  padding: auto;
 }
 
 .comment-display ul li {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -21,7 +21,7 @@
 
 .comment-display ul li button {
   margin-left: 10px;
-  padding: 8px 12px;
+  padding: 7px;
   border: none;
   border-radius: 4px;
   background-color: #4ddc51;
