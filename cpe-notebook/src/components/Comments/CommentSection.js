@@ -67,6 +67,7 @@ function CommentSection() {
 
   return (
     <div className="comment-section">
+      <h1>Disccussions</h1>
       <CommentDisplay
         comments={comments}
         handleReply={handleReply}

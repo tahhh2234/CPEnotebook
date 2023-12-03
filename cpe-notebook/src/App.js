@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import AppHeader from "./components/AppHeader";
-import NotebookItem from "./components/NotebookItem";
-import NotebookPost from "./components/NotebookPost";
+import NotebookItem from "./components/Posts/NotebookItem";
+import NotebookPost from "./components/Posts/NotebookPost";
 import notebooks from "./data/notebooks";
 import AppSearch from "./components/AppSearch";
-import CommentSection from "./components/CommentSection";
+import CommentSection from "./components/Comments/CommentSection";
 
 function App() {
   const [selectedNotebook, setSelectedNotebook] = useState(null);
