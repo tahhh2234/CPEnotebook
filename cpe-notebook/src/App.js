@@ -48,7 +48,20 @@ function App() {
   return (
     <div>
       <AppHeader />
-      <a href={process.env.PUBLIC_URL + "software_engineer_proposal.pdf"} target="blank" className="pdf-file">Proposal</a>
+      <a
+        href={process.env.PUBLIC_URL + "software_engineer_proposal.pdf"}
+        target="blank"
+        className="pdf-file"
+      >
+        Proposal
+      </a>
+      <a
+        href={process.env.PUBLIC_URL + "SRS.pdf"}
+        target="blank"
+        className="pdf-file"
+      >
+        SRS
+      </a>
       <section className="app-section">
         <div className="app-container">
           <AppSearch value={searchText} onValueChange={setSearchText} />
