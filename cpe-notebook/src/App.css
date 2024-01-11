@@ -19,3 +19,32 @@
   display: flex;
   justify-content: center;
 }
+
+.pdf-links{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pdf-link {
+  background-color: #e7c994;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px auto; 
+  transition: box-shadow 0.3s ease-in-out;
+  
+}
+
+.pdf-link:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-file-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.pdf-file-link:hover {
+  text-decoration: underline;
+}

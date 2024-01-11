@@ -48,20 +48,48 @@ function App() {
   return (
     <div>
       <AppHeader />
-      <a
-        href={process.env.PUBLIC_URL + "software_engineer_proposal.pdf"}
-        target="blank"
-        className="pdf-file"
-      >
-        Proposal
-      </a>
-      <a
-        href={process.env.PUBLIC_URL + "SRS.pdf"}
-        target="blank"
-        className="pdf-file"
-      >
-        SRS
-      </a>
+      <div className="pdf-links">
+      <div className="pdf-link">
+          <a
+            href={process.env.PUBLIC_URL + "software_engineer_proposal.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pdf-file-link"
+          >
+            1.Proposal.pdf
+          </a>
+        </div>
+        <div className="pdf-link">
+          <a
+            href={process.env.PUBLIC_URL + "SRS.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pdf-file-link"
+          >
+            2.SRS.pdf
+          </a>
+        </div>
+      <div className="pdf-link">
+          <a
+            href={process.env.PUBLIC_URL + "SDD.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pdf-file-link"
+          >
+            3.SDD.pdf
+          </a>
+        </div>
+        <div className="pdf-link">
+          <a
+            href={process.env.PUBLIC_URL + "Backlog and Sprint backlog.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pdf-file-link"
+          >
+            4.Backlog and Sprint backlog.pdf
+          </a>
+        </div>
+        </div>
       <section className="app-section">
         <div className="app-container">
           <AppSearch value={searchText} onValueChange={setSearchText} />
