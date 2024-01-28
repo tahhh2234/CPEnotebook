@@ -5,21 +5,27 @@
 {% endblock %}
 
 {% block content %}
-<form>
+<form action="{% url 'library' %}" method="post">
+    {% csrf_token %}
+    {{ form.None_field_errors }}
     <h2>บันทึกวิชาที่สนใจ</h2>
-    <div><label>ชื่อ-นามสกุล</label>
-        <input type="text">
+    <div style="margin-bottom: 16px;">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+        {{ form.name.errors }}
     </div>
-    <div>
-        <label>อีเมล</label>
-        <input type="email">
+    <div style="margin-bottom: 16px;">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.email.errors }}
     </div>
-    <div>
-        <label>รายวิชา</label>
-        {% for notebook in notebooks %}
-            <input type="checkbox"> <label>{{ notebook.title }}</label>
-        {% endfor %}
+    <div style="margin-bottom: 16px;">
+        {{ form.notebook_set.label_tag }}
+        {{ form.notebook_set }}
+        {{ form.notebook_set.errors }}
     </div>
-    <a href="{% url 'library_thanks' %}">บันทึก</a>
+    <div style="margin-bottom: 16px;">
+        <button type="submit">บันทึก</button>
+    </div>
 </form>
 {% endblock %}
