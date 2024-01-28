@@ -1,5 +1,6 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
+from .models import Notebook
 
 all_notebooks = [
     {'id': "261218", 'title': "Algorithms for Computer Engineers", "chapters": 24, "is_maths": False},
@@ -10,14 +11,15 @@ all_notebooks = [
 
 # Create your views here.
 def notebooks(request):
+    all_notebooks = Notebook.objects.order_by('-is_maths')
     context = {'notebooks': all_notebooks}
     return render(request, 'app_notebooks/notebooks.html', context)
 
 def notebook(request, notebook_id):
     one_notebook = None
     try:
-        one_notebook = [n for n in all_notebooks if n['id'] == notebook_id][0]
-    except IndexError:
+        one_notebook = Notebook.objects.get(id=notebook_id)
+    except:
         print('ไม่พบรายวิชานี้')
     context = { 'notebook': one_notebook }
     return render(request, 'app_notebooks/notebook.html', context)

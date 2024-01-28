@@ -1,0 +1,25 @@
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}
+    Library | 
+{% endblock %}
+
+{% block content %}
+<form>
+    <h2>บันทึกวิชาที่สนใจ</h2>
+    <div><label>ชื่อ-นามสกุล</label>
+        <input type="text">
+    </div>
+    <div>
+        <label>อีเมล</label>
+        <input type="email">
+    </div>
+    <div>
+        <label>รายวิชา</label>
+        {% for notebook in notebooks %}
+            <input type="checkbox"> <label>{{ notebook.title }}</label>
+        {% endfor %}
+    </div>
+    <a href="{% url 'library_thanks' %}">บันทึก</a>
+</form>
+{% endblock %}
