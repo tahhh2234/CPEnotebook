@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>รายวิชาทั้งหมด | CPEnotebook</title>
-</head>
-<body>
-    <header style="background-color: lightgrey;">
-        <a href="#">CPEnotebook</a>
-        <a href="#">รายวิชาทั้งหมด</a>
-        <a href="#">เกี่ยวกับ</a>
-    </header>
-    <div>
-        <h1>รายวิชาทั้งหมด</h1>
-    </div>
-    <footer style="background-color: lightgray;">
-        <h5>about us</h5>
-        <p>
-            <a href="#">Github</a>
-        </p>
-        <p>Copyright 2023-2024 CPEnotebook. All right reserved.</p>
-    </footer>
-</body>
-</html>
+{% extends 'app_general/components/base.html' %}
+
+{% block site_title %}
+    รายวิชาทั้งหมด | 
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1>รายวิชาทั้งหมด</h1>
+    {% for notebook in notebooks %}
+        <div style="background-color: rgb(202, 227, 250);">
+            <h3><a href="{% url 'notebook' notebook.id %}">{{notebook.title}}</a></h3>
+            <p>{{ notebook.chapters }} chapters</p>
+            {% if notebook.is_maths %}
+                <p>***มีคณิตศาสตร์***</p>
+            {% endif %}
+        </div>         
+    {% empty %}
+        <p>ไม่มีรายวิชา</p>
+    {% endfor %} 
+</div>
+{% endblock %}

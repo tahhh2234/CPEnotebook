@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+class Notebook(models.Model):
+    title = models.CharField(max_length=255)
+    chapters = models.IntegerField()
+    is_maths = models.BooleanField(default=False)
+    description = models.TextField(null=True)
