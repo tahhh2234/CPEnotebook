@@ -1,5 +1,10 @@
+{% load static %}
+
 <header style="background-color: lightgrey;">
-    <a href="{% url 'home' %}">CPEnotebook</a>
+    <a href="{% url 'home' %}">
+        <img src="{% static 'app_general/weblogo.png' %}">
+        <span>CPEnotebook</span>
+    </a>
     <a href="{% url 'notebooks' %}">รายวิชาทั้งหมด</a>
     <a href="{% url 'about' %}">เกี่ยวกับ</a>
 </header>

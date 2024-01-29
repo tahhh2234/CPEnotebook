@@ -1,5 +1,5 @@
 {% extends 'app_general/components/base.html' %}
-
+{% load static %}
 {% block site_title %}
     รายวิชาทั้งหมด | 
 {% endblock %}
@@ -9,7 +9,10 @@
     <h1>รายวิชาทั้งหมด</h1>
     {% for notebook in notebooks %}
         <div style="background-color: rgb(202, 227, 250);">
-            <h3><a href="{% url 'notebook' notebook.id %}">{{notebook.title}}</a></h3>
+            <div>
+                <img src="{% static notebook.image_relative_url %}">
+            </div>
+            <h3><a href="{% url 'notebook' notebook.id %}">({{ notebook.code }}) {{notebook.title}}</a></h3>
             <p>{{ notebook.chapters }} chapters</p>
             {% if notebook.is_maths %}
                 <p>***มีคณิตศาสตร์***</p>

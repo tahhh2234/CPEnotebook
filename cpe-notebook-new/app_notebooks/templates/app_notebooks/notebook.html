@@ -1,4 +1,5 @@
 {% extends 'app_general/components/base.html' %}
+{% load static %}
 
 {% block site_title %}
     {{notebook.title}} | 
@@ -7,6 +8,9 @@
 {% block content %}
 {% if notebook is not None %}
 <div>
+    <div>
+        <img src="{% static notebook.image_relative_url %}">
+    </div>
     <h3>{{notebook.title}}</h3>
     <p>{{ notebook.chapters }} chapters</p>
     {% if notebook.is_maths %}
