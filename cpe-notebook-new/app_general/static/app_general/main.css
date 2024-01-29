@@ -51,6 +51,10 @@
   margin-bottom: 24px;
 }
 
+.content-section-single{
+  min-height: 100vh;
+}
+
 .grid{
   display: grid;
   grid-template-columns: 1fr;
