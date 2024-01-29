@@ -21,6 +21,9 @@
 }
 
 .button{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   color: #ffffff;
   background-color: #807e7e;
   border: none;
@@ -31,10 +34,12 @@
   padding: 8px 12px;
   margin-bottom: 16px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .button-primary{
   background-color: rgb(58, 107, 244);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .content-section{
@@ -45,6 +50,10 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.content-container-narrow{
+  max-width: 600px;
 }
 
 .content-title{
@@ -175,6 +184,38 @@ a{
   font-size: 12px;
 }
 
+/*form*/
+.form-field{
+  margin-bottom: 16px;
+}
+
+label{
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.6;
+}
+
+input[type='text'],
+input[type='email']{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  border: 1.5px solid #888888;
+  border-radius: 4px;
+  font-size: 16px;
+  display: block;
+  height: 35px;
+  width: 100%;
+  padding: 4px 12px;
+  outline: none;
+}
+
+input[type='text']:focus,
+input[type='email']:focus{
+  border-color: rgb(32, 53, 210);
+}
+
 /*home-landing-section*/
 .home-landing-section{
   background-color: #ffffff;
@@ -190,4 +231,28 @@ a{
   text-shadow: 1px 1px 2px rgba(214, 214, 214, 0.8);
   margin-top: 0px;
   margin-bottom: 24px;
+}
+
+/*notebook*/
+.notebook-title a{
+  color: #111111;
+  text-decoration: none;
+}
+
+.notebook-card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.notebook-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.notebook-image{
+  display: block;
+  max-width: 100%;
+  margin-bottom: 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }

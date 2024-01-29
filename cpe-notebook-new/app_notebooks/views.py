@@ -11,7 +11,7 @@ all_notebooks = [
 
 # Create your views here.
 def notebooks(request):
-    all_notebooks = Notebook.objects.order_by('-is_maths')
+    all_notebooks = Notebook.objects.order_by('code')
     context = {'notebooks': all_notebooks}
     return render(request, 'app_notebooks/notebooks.html', context)
 

@@ -6,19 +6,23 @@
 {% endblock %}
 
 {% block content %}
-{% if notebook is not None %}
-<div>
-    <div>
-        <img src="{% static notebook.image_relative_url %}">
+<section class="content-section content-section-single">
+    <div class="content-container">
+        {% if notebook is not None %}
+        <div class="grid">
+            <img class="img-block" src="{% static notebook.image_relative_url %}">
+            <h3>{{notebook.title}}</h3>
+            <p>{{ notebook.chapters }} chapters</p>
+            {% if notebook.is_maths %}
+                <p>***มีคณิตศาสตร์***</p>
+            {% endif %}
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, impedit beatae quasi deleniti praesentium nulla, ut molestiae ullam excepturi saepe maxime laborum quas iusto, tempore animi vitae consequuntur. Accusamus, sequi?</p>
+        </div>  
+        {% else %}
+            <p>ไม่พบรายวิชานี้</p>
+        {% endif %}
+        <a class="button button-primary" href="{% url 'library' %}">บันทึกรายวิชา</a>
     </div>
-    <h3>{{notebook.title}}</h3>
-    <p>{{ notebook.chapters }} chapters</p>
-    {% if notebook.is_maths %}
-        <p>***มีคณิตศาสตร์***</p>
-    {% endif %}
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, impedit beatae quasi deleniti praesentium nulla, ut molestiae ullam excepturi saepe maxime laborum quas iusto, tempore animi vitae consequuntur. Accusamus, sequi?</p>
-</div>  
-{% else %}
-    <p>ไม่พบรายวิชานี้</p>
-{% endif %}
+</section>
+
 {% endblock %}
