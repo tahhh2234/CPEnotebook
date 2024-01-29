@@ -2,29 +2,34 @@
 {% load static %}
 
 {% block content %}
-<div>
-    <h1>CPEnotebook</h1>
-    <p>รวมสไลด์รายวิชาในหลักสูตรวิศวกรรมคอมพิวเตอร์ สำหรับวิศวกรคอมพิวเตอร์</p>
-</div>
-<section>
-    <h4>คำอธิบาย</h4>
-    <div>
-        <div>
-            <img src="{% static 'app_general/library.jpg' %}">
+<section class="home-landing-section">
+    <h1 class="home-landing-text">CPEnotebook</h1>
+    <p class="home-landing-text">รวมสไลด์รายวิชาในหลักสูตรวิศวกรรมคอมพิวเตอร์ สำหรับวิศวกรคอมพิวเตอร์</p>
+    <p class="home-landing-text">
+        <a class="button" href="{% url 'notebooks' %}">รายวิชาทั้งหมด</a>
+        <a class="button button-primary" href="{% url 'library' %}">บันทึกรายวิชา</a>
+    </p>
+</section>
+<section class="content-section">
+    <div class="content-container">
+        <h4 class="content-title text-center">คำอธิบาย</h4>
+        <div class="grid grid-3">
+            <div>               
+                <img class="img-block" src="{% static 'app_general/library.jpg' %}">                
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, doloribus illo tempora ipsam quasi a sunt. Fugiat placeat temporibus iusto nobis ipsa veniam vel, soluta modi. Aut nobis ratione recusandae.</p>
+            </div>
+            <div>
+                <img class="img-block" src="{% static 'app_general/library.jpg' %}">               
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, doloribus illo tempora ipsam quasi a sunt. Fugiat placeat temporibus iusto nobis ipsa veniam vel, soluta modi. Aut nobis ratione recusandae.</p>
+            </div>
+            <div>
+                <img class="img-block" src="{% static 'app_general/library.jpg' %}">                
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, doloribus illo tempora ipsam quasi a sunt. Fugiat placeat temporibus iusto nobis ipsa veniam vel, soluta modi. Aut nobis ratione recusandae.</p>
+            </div>
         </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, doloribus illo tempora ipsam quasi a sunt. Fugiat placeat temporibus iusto nobis ipsa veniam vel, soluta modi. Aut nobis ratione recusandae.</p>
-    </div>
-    <div>
-        <div>
-            <img src="{% static 'app_general/library.jpg' %}">
-        </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, doloribus illo tempora ipsam quasi a sunt. Fugiat placeat temporibus iusto nobis ipsa veniam vel, soluta modi. Aut nobis ratione recusandae.</p>
-    </div>
-    <div>
-        <div>
-            <img src="{% static 'app_general/library.jpg' %}">
-        </div>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, doloribus illo tempora ipsam quasi a sunt. Fugiat placeat temporibus iusto nobis ipsa veniam vel, soluta modi. Aut nobis ratione recusandae.</p>
+        <p class="text-center">
+            <a class="button" href="{% url 'about' %}">เกี่ยวกับ CPEnotebook</a>
+        </p>
     </div>
 </section>
 
