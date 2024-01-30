@@ -15,15 +15,17 @@
                     <a href="{% url 'notebook' notebook.id %}">
                         <img class= "notebook-image" src="{% static notebook.image_relative_url %}">
                     </a>
-                    <h5 class="notebook-title">
-                        <a href="{% url 'notebook' notebook.id %}">
-                            {{ notebook.code }} {{notebook.title}}
-                        </a>
-                    </h5>
-                    <p>{{ notebook.chapters }} chapters</p>
-                    <!-- {% if notebook.is_maths %}
-                        <p>***มีคณิตศาสตร์***</p>
-                    {% endif %} -->
+                    <div class="notebook-description">
+                        <h5>
+                            <a href="{% url 'notebook' notebook.id %}">
+                                {{ notebook.code }} {{notebook.title}}
+                            </a>
+                        </h5>
+                        <p>{{ notebook.chapters }} chapters</p>
+                        <!-- {% if notebook.is_maths %}
+                            <p>***มีคณิตศาสตร์***</p>
+                        {% endif %} -->
+                    </div>
                 </div>         
                 {% endfor %}
             </div>

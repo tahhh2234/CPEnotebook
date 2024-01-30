@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,13 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-b=k+8h+su4$f!%&^auh5bh-e%79%jsm4*d6psr(60-#l-_=k0x'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG') == "True"
 
-ALLOWED_HOSTS = []
-
+production_host = os.getenv('PRODUCTION_HOST')
+ALLOWED_HOSTS = [production_host] if production_host is not None else []
 
 # Application definition
 
@@ -78,13 +82,17 @@ WSGI_APPLICATION = 'notebook.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME': 'notebook',
-        'USER': 'root',
-        'PASSWORD': '261361',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
+
+DATABASES["default"] = dj_database_url.parse("postgres://cpenotebook_user:4uXEfIV1AE6TxvD8YtjvKdASffRpj8Ph@dpg-cmrpkag21fec739t0mlg-a.singapore-postgres.render.com/cpenotebook")
+
+# postgres://cpenotebook_user:4uXEfIV1AE6TxvD8YtjvKdASffRpj8Ph@dpg-cmrpkag21fec739t0mlg-a.singapore-postgres.render.com/cpenotebook
 
 
 # Password validation
